@@ -1,0 +1,35 @@
+import Image from 'next/image'
+import Link from 'next/link'
+import { ArrowDownRight, ArrowUpRight } from 'lucide-react'
+import { catalog, projects } from '@/lib/content'
+import { Eyebrow, Footer, Header } from '@/components/site-shell'
+
+export default function Page() {
+  return <main>
+    <Header />
+    <section className="relative flex min-h-screen items-end overflow-hidden bg-ink px-5 pb-12 pt-28 text-ivory md:px-10 md:pb-16">
+      <Image src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2400&q=90" alt="Warm contemporary interior furnished with sculptural pieces" fill priority className="object-cover opacity-65" sizes="100vw" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-ink/30" />
+      <div className="relative mx-auto flex w-full max-w-[1600px] flex-col gap-10">
+        <p className="text-xs uppercase tracking-[0.28em] text-ivory/70">Furniture & interior solutions · Made in Nigeria</p>
+        <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+          <h1 className="max-w-5xl text-balance font-serif text-6xl leading-[0.95] tracking-tight md:text-8xl lg:text-[9.5rem]">Built for the spaces that matter.</h1>
+          <div className="flex shrink-0 flex-col gap-4"><Link href="/projects" className="flex items-center justify-between gap-10 border-b border-ivory/50 py-3 text-sm">Explore our work <ArrowUpRight /></Link><Link href="#contact" className="flex items-center justify-between gap-10 border-b border-orange py-3 text-sm">Start a project <ArrowDownRight /></Link></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" className="bg-background px-5 py-24 md:px-10 md:py-40"><div className="mx-auto max-w-[1500px]"><Eyebrow>Our point of view</Eyebrow><h2 className="max-w-6xl text-pretty font-serif text-5xl leading-[1.05] tracking-tight md:text-8xl">We don&apos;t just make furniture. <span className="text-muted-foreground">We shape the life around it.</span></h2><div className="mt-16 grid gap-8 md:grid-cols-2 md:items-end"><Image src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1400&q=88" alt="Crafted timber furniture in a quiet interior" width={1200} height={850} className="aspect-[4/3] object-cover" /><div className="flex flex-col gap-8 md:pl-16"><p className="max-w-lg text-lg leading-relaxed text-muted-foreground">WOODWEY brings design, fabrication and installation under one roof. From a singular lounge chair to an entire workplace, every piece begins with how the space should feel—and how it needs to work.</p><Link href="/catalog" className="w-fit border-b border-foreground pb-2 text-sm">Explore the catalog</Link></div></div></div></section>
+
+    <section className="bg-ink px-5 py-24 text-ivory md:px-10 md:py-36"><div className="mx-auto max-w-[1600px]"><Eyebrow>What we make</Eyebrow><div className="grid gap-16 md:grid-cols-12"><div className="md:col-span-5"><h2 className="font-serif text-5xl md:text-7xl">One workshop.<br/>Many possibilities.</h2><p className="mt-8 max-w-md leading-relaxed text-ivory/60">Residential, commercial and institutional furniture, tailored joinery, metalwork and complete interior installations.</p></div><div className="md:col-span-7"><div className="grid grid-cols-2 border-t border-white/15">{['Living & lounge','Workspaces','Dining','Bedrooms','Storage & joinery','Custom installations'].map((item, i) => <div key={item} className="border-b border-white/15 py-6 text-lg"><span className="mr-4 text-xs text-orange">0{i+1}</span>{item}</div>)}</div></div></div></div></section>
+
+    <section className="px-5 py-24 md:px-10 md:py-36"><div className="mx-auto max-w-[1600px]"><div className="mb-14 flex items-end justify-between"><div><Eyebrow>Selected work</Eyebrow><h2 className="font-serif text-5xl md:text-7xl">Spaces with a point of view.</h2></div><Link href="/projects" className="hidden border-b pb-2 text-sm md:block">View all projects</Link></div><div className="grid gap-6 md:grid-cols-12">{projects.slice(0,3).map((p,i)=><Link href="/projects" key={p.name} className={`${i===0?'md:col-span-7':'md:col-span-5'} group`}><div className={`${i===0?'aspect-[4/3]':'aspect-[4/5]'} relative overflow-hidden`}><Image src={p.image} alt={p.alt} fill className="object-cover transition duration-700 group-hover:scale-[1.03]" sizes="(min-width:768px) 55vw,100vw"/></div><div className="mt-4 flex justify-between"><h3 className="font-serif text-2xl">{p.name}</h3><p className="text-xs text-muted-foreground">{p.location}</p></div></Link>)}</div></div></section>
+
+    <section className="bg-sand px-5 py-24 md:px-10"><div className="mx-auto max-w-[1600px]"><Eyebrow>Objects of interest</Eyebrow><div className="grid gap-5 md:grid-cols-4">{catalog.slice(0,4).map(item=><Link href="/catalog" key={item.id} className="group"><div className="relative aspect-[3/4] overflow-hidden"><Image src={item.image} alt={item.alt} fill className="object-cover transition duration-700 group-hover:scale-105" sizes="25vw"/></div><p className="mt-3 font-serif text-xl">{item.name}</p><p className="text-xs text-muted-foreground">{item.category}</p></Link>)}</div></div></section>
+
+    <section className="px-5 py-28 md:px-10 md:py-40"><div className="mx-auto grid max-w-[1300px] gap-10 md:grid-cols-3"><Eyebrow>How we work</Eyebrow>{[['01','Listen','We understand the space, the people and the ambition.'],['02','Make','Design and fabrication happen closely, with care in every junction.'],['03','Install','We bring every element together and leave the space ready for life.']].map(([n,t,d])=><div key={n} className="border-t pt-5"><span className="text-xs text-orange">{n}</span><h3 className="mt-8 font-serif text-3xl">{t}</h3><p className="mt-3 leading-relaxed text-muted-foreground">{d}</p></div>)}</div></section>
+
+    <section id="contact" className="bg-orange px-5 py-24 text-ink md:px-10 md:py-32"><div className="mx-auto grid max-w-[1500px] gap-16 md:grid-cols-2"><div><p className="mb-6 text-xs uppercase tracking-[.22em]">Have a space in mind?</p><h2 className="text-balance font-serif text-6xl leading-none md:text-8xl">Let&apos;s make something worth keeping.</h2></div><form className="grid gap-5" action="#contact"><label className="text-sm">Name<input required name="name" className="mt-2 w-full border-b border-ink/50 bg-transparent py-3 outline-none focus:border-ink"/></label><label className="text-sm">Email<input required type="email" name="email" className="mt-2 w-full border-b border-ink/50 bg-transparent py-3 outline-none focus:border-ink"/></label><label className="text-sm">Tell us about the space<textarea required name="project" rows={3} className="mt-2 w-full resize-none border-b border-ink/50 bg-transparent py-3 outline-none focus:border-ink"/></label><button className="mt-4 flex items-center justify-between bg-ink px-6 py-5 text-left text-ivory">Send project brief <ArrowUpRight /></button><p className="text-xs text-ink/60">Preview form only — connect your preferred form service before launch.</p></form></div></section>
+    <Footer />
+  </main>
+}
