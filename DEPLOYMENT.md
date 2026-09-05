@@ -1,0 +1,36 @@
+# Woodwey deployment
+
+## Vercel project settings
+
+- Root Directory: leave blank (`.` / repository root)
+- Framework Preset: Next.js
+- Install Command: `pnpm install --frozen-lockfile`
+- Build Command: `pnpm build`
+- Output Directory: leave unset and let Vercel detect Next.js
+
+## Production environment variables
+
+Required for website inquiry delivery:
+
+- `INQUIRY_WEBHOOK_URL` — active Make custom-webhook URL.
+
+Optional:
+
+- `INQUIRY_WEBHOOK_TOKEN` — bearer token only when the webhook is protected with the same token.
+- `NEXT_PUBLIC_INSTAGRAM_URL` — verified Instagram profile URL.
+- `NEXT_PUBLIC_FACEBOOK_URL` — verified Facebook profile URL.
+- `NEXT_PUBLIC_LINKEDIN_URL` — verified LinkedIn profile URL.
+
+Never commit `.env.local`. Configure production values in Vercel Project Settings → Environment Variables, and enable the Make scenario before testing the deployed quote form.
+
+## Release checks
+
+Run from this directory:
+
+```powershell
+pnpm.cmd install --frozen-lockfile
+pnpm.cmd lint
+pnpm.cmd build
+```
+
+The downloadable catalogue is served from `public/downloads/Woodwey-E-Catalogue-2026.pdf`.

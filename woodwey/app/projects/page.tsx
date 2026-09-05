@@ -1,4 +1,0 @@
-import { Eyebrow,Footer,Header } from '@/components/site-shell'
-import { ProjectsExperience } from '@/components/projects-experience'
-export const metadata={title:'Projects',description:'A curated archive of Woodwey furniture and interior work.'}
-export default function ProjectsPage(){return <main className="page-enter"><Header/><section className="page-hero"><div className="shell"><Eyebrow>Project archive</Eyebrow><div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end"><h1>Made for real rooms.<br/>And real life.</h1><p className="max-w-md text-muted-foreground">A living archive of furniture, material and finished spaces—curated from Woodwey&apos;s work across residential, workplace and commercial interiors.</p></div></div></section><section className="px-3 pb-24 md:px-6"><div className="mx-auto max-w-[1800px]"><ProjectsExperience/></div></section><Footer/></main>}

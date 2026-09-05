@@ -1,4 +1,0 @@
-import { CatalogExperience } from '@/components/catalog-experience'
-import { Eyebrow,Footer,Header } from '@/components/site-shell'
-export const metadata={title:'Catalog',description:'Explore custom furniture references by Woodwey.'}
-export default function CatalogPage(){return <main className="page-enter"><Header/><section className="page-hero pb-16"><div className="shell"><Eyebrow>Furniture library</Eyebrow><div className="flex flex-col gap-7 md:flex-row md:items-end md:justify-between"><h1 className="max-w-4xl">Find the beginning of your space.</h1><p className="max-w-md leading-relaxed text-muted-foreground">Browse forms, materials and possibilities—not off-the-shelf products. Select what resonates and we&apos;ll shape it for your project.</p></div></div></section><section className="shell pb-24"><CatalogExperience/></section><Footer/></main>}
