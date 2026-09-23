@@ -33,4 +33,14 @@ pnpm.cmd lint
 pnpm.cmd build
 ```
 
-The downloadable catalogue is served from `public/downloads/Woodwey-E-Catalogue-2026.pdf`.
+## Catalogue access
+
+The full catalogue is not published as a website download. Both catalogue CTAs open the same lead-capture form, which delivers through `INQUIRY_WEBHOOK_URL` so Woodwey can share controlled access manually.
+
+The private editorial PDF can be regenerated locally with:
+
+```powershell
+pnpm.cmd run catalogue:generate
+```
+
+It is written to the ignored `output/pdf/` directory and must not be moved into `public/`.
