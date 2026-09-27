@@ -22,7 +22,7 @@ export const projectMedia:MediaItem[]=[
   {id:'m7',type:'image',src:image('0178'),category:'Interiors',title:'Learning Together',description:'Durable pieces for shared discovery.',ratio:'landscape'},
   {id:'m8',type:'image',src:image('0233'),category:'Corporate',title:'First Impression',description:'A custom reception statement.',featured:true,ratio:'portrait'},
   {id:'m9',type:'video',src:video('0262'),poster:image('0166'),category:'Custom',title:'In the Detail',description:'Craft seen up close.',ratio:'landscape'},
-  {id:'m10',type:'image',src:image('0165'),category:'Home',title:'Dining Ritual',description:'A generous table for gathering.',ratio:'portrait'},
+  {id:'m10',type:'image',src:image('0006'),category:'Home',title:'Timber Media Console',description:'Geometric storage for the living room.',ratio:'portrait'},
   {id:'m11',type:'image',src:image('0234'),category:'Interiors',title:'Welcome In',description:'Furniture and atmosphere in balance.',featured:true,ratio:'landscape'},
   {id:'m12',type:'image',src:image('0195'),category:'Home',title:'Soft Geometry',description:'Comfort shaped with intention.',ratio:'square'},
   {id:'m13',type:'image',src:image('0175'),category:'Custom',title:'The Tailored Seat',description:'Upholstery with a precise silhouette.',ratio:'portrait'},

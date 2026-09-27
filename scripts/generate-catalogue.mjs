@@ -27,28 +27,43 @@ const colors = { ink: '#181814', ivory: '#f7f4ee', orange: '#c65b18', line: '#c8
 const categories = ['Home', 'Interiors', 'Corporate', 'Office', 'Custom', 'Metal Works']
 const siteBase = (process.env.NEXT_PUBLIC_SITE_URL || 'https://woodweyng.com').replace(/\/$/, '')
 const imageFile = publicPath => path.join(root, 'public', publicPath.replace(/^\//, ''))
+const coverImage = '/images/IMG-20260813-WA0234.jpg'
+const indexImages = {
+  Home: '/images/IMG-20260813-WA0009.jpg',
+  Interiors: '/images/IMG-20260813-WA0043.jpg',
+  Corporate: '/images/IMG-20260813-WA0014.jpg',
+  Office: '/images/IMG-20260813-WA0246.jpg',
+  Custom: '/images/IMG-20260813-WA0089.jpg',
+  'Metal Works': '/images/IMG-20260813-WA0079.jpg',
+}
+const usedImages = new Set()
 const page = (background = colors.ivory) => {
   doc.addPage()
   doc.rect(0, 0, doc.page.width, doc.page.height).fill(background)
 }
-const watermarkPositions = [
-  [0.1, 0.35, -3], [0.24, 0.5, 2], [0.08, 0.64, -2],
-  [0.22, 0.27, 3], [0.15, 0.48, -4],
-]
-function image(src, x, y, width, height, index = 0, protectedImage = true) {
+function image(src, x, y, width, height, protectedImage = true) {
+  if (usedImages.has(src)) throw new Error(`Catalogue image appears more than once: ${src}`)
+  usedImages.add(src)
   const file = imageFile(src)
   if (!fs.existsSync(file)) throw new Error(`Missing catalogue image: ${src}`)
   doc.save().rect(x, y, width, height).clip().image(file, x, y, { cover: [width, height], align: 'center', valign: 'center' }).restore()
   if (!protectedImage) return
-  const [rx, ry, angle] = watermarkPositions[index % watermarkPositions.length]
-  const fontSize = Math.min(55, Math.max(20, width / 5.8))
+  const label = 'WOODWEY'
+  const phone = '0803 297 3402'
+  doc.font('Woodwey Sans Bold').fontSize(100)
+  const baseWidth = doc.widthOfString(label, { characterSpacing: 3 })
+  const fontSize = Math.min(width * .77 * 100 / baseWidth, height * .19, 66)
+  doc.fontSize(fontSize)
+  const wordWidth = doc.widthOfString(label, { characterSpacing: fontSize * .03 })
+  const wordX = x + (width - wordWidth) / 2
+  const wordY = y + height * .48 - fontSize * .55
+  const phoneSize = Math.min(10, Math.max(7, fontSize * .23))
+  const phoneY = wordY + fontSize * 1.06 + 2
   doc.save().rect(x, y, width, height).clip()
-  doc.fillOpacity(.35).fillColor('#ffffff').font('Woodwey Sans Bold').fontSize(fontSize)
-    .rotate(angle, { origin: [x + width * rx, y + height * ry] })
-    .text('WOODWEY', x + width * rx, y + height * ry, { characterSpacing: fontSize * .09, lineBreak: false })
-  doc.restore()
-  doc.save().fillOpacity(.88).fillColor('#ffffff').font('Woodwey Sans Bold').fontSize(7)
-    .text('0803 297 3402', x + width - 95, y + height - 18, { width: 86, align: 'right', lineBreak: false })
+  doc.fillOpacity(.30).fillColor('#ffffff').font('Woodwey Sans Bold').fontSize(fontSize)
+    .text(label, wordX, wordY, { characterSpacing: fontSize * .03, lineBreak: false })
+  doc.fillOpacity(.62).fillColor('#ffffff').font('Woodwey Sans Bold').fontSize(phoneSize)
+    .text(phone, x, phoneY, { width, align: 'center', characterSpacing: phoneSize * .06, lineBreak: false })
   doc.restore()
 }
 function footer(number, tint = colors.ink) {
@@ -68,13 +83,13 @@ function sectionLabel(category, count) {
 function categoryLink(category) {
   const url = `${siteBase}/catalog?category=${encodeURIComponent(category)}`
   doc.fillColor(colors.ink).font('Woodwey Sans Bold').fontSize(8)
-    .text('CLICK HERE TO SEE MORE ON WOODWEY  →', 36, 765, { link: url, underline: false, characterSpacing: .6 })
+    .text('CLICK HERE TO SEE MORE ON WOODWEY  >', 36, 765, { link: url, underline: false, characterSpacing: .6 })
   doc.moveTo(36, 785).lineTo(559, 785).strokeColor(colors.line).lineWidth(.6).stroke()
 }
 
 let number = 1
 page(colors.ink)
-image('/images/IMG-20260813-WA0234.jpg', 0, 0, 595, 842, 0, false)
+image(coverImage, 0, 0, 595, 842, false)
 doc.save().fillOpacity(.64).rect(0, 0, 595, 842).fill(colors.ink).restore()
 doc.fillColor(colors.ivory).font('Woodwey Sans Bold').fontSize(14)
   .text('WOODWEY', 42, 44, { characterSpacing: 3.1 })
@@ -100,34 +115,34 @@ const indexLayout = [
 ]
 categories.forEach((category, index) => {
   const [x, y, w, h] = indexLayout[index]
-  image(galleries[category][0].src, x, y, w, h, index)
+  image(indexImages[category], x, y, w, h, false)
   doc.save().fillOpacity(.68).rect(x, y + h - 32, w, 32).fill(colors.ink).restore()
   doc.fillColor(colors.ivory).font('Woodwey Sans Bold').fontSize(8)
     .text(category.toUpperCase(), x + 10, y + h - 22, { width: w - 20, characterSpacing: .8, link: `${siteBase}/catalog?category=${encodeURIComponent(category)}` })
 })
 footer(number++)
 
-for (const category of categories) {
+for (const [categoryIndex, category] of categories.entries()) {
   const images = galleries[category].map(entry => entry.src)
-  if (images.length < 9) throw new Error(`${category} has fewer than nine curated images`)
+  if (images.length !== 9) throw new Error(`${category} must have nine curated images for this spread`)
 
   page()
   sectionLabel(category, 1)
-  const firstLayout = [
-    [36, 96, 319, 305], [364, 96, 195, 148], [364, 253, 195, 148],
-    [36, 410, 244, 335], [289, 410, 270, 335],
+  const firstLayouts = [
+    [[36, 96, 333, 300], [379, 96, 180, 300], [36, 406, 170, 339], [216, 406, 170, 339], [396, 406, 163, 339]],
+    [[36, 96, 160, 250], [206, 96, 183, 250], [399, 96, 160, 250], [36, 356, 230, 389], [276, 356, 283, 389]],
   ]
-  images.slice(0, 5).forEach((src, index) => image(src, ...firstLayout[index], index))
+  images.slice(0, 5).forEach((src, index) => image(src, ...firstLayouts[categoryIndex % 2][index]))
   categoryLink(category)
   footer(number++)
 
   page()
   sectionLabel(category, 2)
-  const secondLayout = [
-    [36, 96, 259, 306], [304, 96, 255, 306],
-    [36, 411, 315, 334], [360, 411, 199, 334],
+  const secondLayouts = [
+    [[36, 96, 250, 315], [296, 96, 263, 315], [36, 421, 310, 324], [356, 421, 203, 324]],
+    [[36, 96, 523, 260], [36, 366, 164, 379], [210, 366, 165, 379], [385, 366, 174, 379]],
   ]
-  images.slice(5, 9).forEach((src, index) => image(src, ...secondLayout[index], index + 5))
+  images.slice(5, 9).forEach((src, index) => image(src, ...secondLayouts[categoryIndex % 2][index]))
   categoryLink(category)
   footer(number++)
 }

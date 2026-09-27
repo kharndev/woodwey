@@ -27,6 +27,23 @@ export function Footer(){return <footer className="site-footer"><div className="
 
 function FooterColumn({title,links}:{title:string;links:string[][]}){return <div><p className="footer-title">{title}</p><div className="footer-links">{links.map(([label,href])=><Link key={label} href={href}>{label}</Link>)}</div></div>}
 
-export function WhatsApp(){const [nearFooter,setNearFooter]=useState(false);useEffect(()=>{const footer=document.querySelector('.site-footer');if(!footer)return;const observer=new IntersectionObserver(([entry])=>setNearFooter(entry.isIntersecting),{rootMargin:'0px 0px 5% 0px',threshold:0});observer.observe(footer);return()=>observer.disconnect()},[]);return <a className={`whatsapp ${nearFooter?'is-near-footer':''}`} href="https://wa.me/2348032973402?text=Hello%20Woodwey%2C%20I%27d%20like%20to%20discuss%20a%20furniture%2C%20interior%20or%20metalwork%20project." target="_blank" rel="noreferrer" aria-label="Talk to Woodwey on WhatsApp"><MessageCircle/><span>Talk to Woodwey</span></a>}
+export function WhatsApp(){
+  const [nearContent,setNearContent]=useState(false)
+  const pathname=usePathname()
+  useEffect(()=>{
+    const targets=document.querySelectorAll('.site-footer,.contact-section')
+    const visible=new Set<Element>()
+    const observer=new IntersectionObserver(entries=>{
+      for(const entry of entries){
+        if(entry.isIntersecting)visible.add(entry.target)
+        else visible.delete(entry.target)
+      }
+      setNearContent(visible.size>0)
+    },{rootMargin:'0px 0px 5% 0px',threshold:0})
+    targets.forEach(target=>observer.observe(target))
+    return()=>observer.disconnect()
+  },[pathname])
+  return <a className={`whatsapp ${nearContent?'is-near-footer':''}`} href="https://wa.me/2348032973402?text=Hello%20Woodwey%2C%20I%27d%20like%20to%20discuss%20a%20furniture%2C%20interior%20or%20metalwork%20project." target="_blank" rel="noreferrer" aria-label="Talk to Woodwey on WhatsApp"><MessageCircle/><span>Talk to Woodwey</span></a>
+}
 export function Eyebrow({children}:{children:React.ReactNode}){return <p className="eyebrow">{children}</p>}
 export function TextLink({href,children}:{href:string;children:React.ReactNode}){return <ButtonLink href={href} variant="outline">{children}</ButtonLink>}

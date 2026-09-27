@@ -84,8 +84,7 @@ export function CatalogExperience() {
         return <article key={`${image.category}-${image.src}`} className={`catalog-gallery-item gallery-${index + 1}`}>
           <button type="button" className="catalog-gallery-media protected-media" data-protected-media onClick={() => open(image)} aria-label={`View details for ${item.name}`}>
             <Image src={image.src} alt={image.alt} fill draggable={false} className="object-cover" sizes="(min-width:1100px) 56vw,(min-width:700px) 60vw,100vw" loading={spreadIndex === 0 && index === 0 ? 'eager' : 'lazy'} />
-            <span className={`media-watermark wm-${String.fromCharCode(97 + index % 4)}`} aria-hidden="true">WOODWEY</span>
-            <span className="media-phone" aria-hidden="true">0803 297 3402</span>
+            <span className="media-watermark" aria-hidden="true">WOODWEY</span>
           </button>
           <div className="catalog-gallery-actions"><button type="button" onClick={() => open(image)}>View Details <ArrowUpRight size={16} /></button><button type="button" onClick={() => toggle(item.id)} aria-label={`${isSelected ? 'Remove' : 'Add'} ${item.name} ${isSelected ? 'from' : 'to'} Selection`} className={isSelected ? 'is-selected' : ''}>{isSelected ? <Check size={15} /> : <span aria-hidden="true">+</span>}{isSelected ? 'Selected' : 'Add to Selection'}</button></div>
         </article>
