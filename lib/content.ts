@@ -7,21 +7,21 @@ const video=(n:string)=>`/videos/VID-20260813-WA${n}.mp4`
 
 export const projects=[
   {name:'Executive Suite',category:'Corporate',image:image('0134'),alt:'Custom executive office with warm timber furniture'},
-  {name:'The Gathered Home',category:'Home',image:image('0162'),alt:'Finished residential dining setting with custom Woodwey furniture'},
+  {name:'The Gathered Home',category:'Home',image:image('0165'),alt:'Finished Woodwey seating in a residential setting'},
   {name:'Quiet Focus',category:'Office',image:image('0208'),alt:'Contemporary Woodwey workspace installation'},
   {name:'A Place to Learn',category:'Interiors',image:image('0178'),alt:'Durable custom furniture made for a learning space'},
 ]
 
 export const projectMedia:MediaItem[]=[
   {id:'m1',type:'image',src:image('0134'),category:'Corporate',title:'Executive Suite',description:'Tailored furniture for focused leadership.',featured:true,ratio:'landscape'},
-  {id:'m2',type:'image',src:image('0162'),category:'Home',title:'Gathered Living',description:'A warm setting made for everyday life.',featured:true,ratio:'portrait'},
+  {id:'m2',type:'image',src:image('0165'),category:'Home',title:'Gathered Living',description:'A warm setting made for everyday life.',featured:true,ratio:'portrait'},
   {id:'m3',type:'image',src:image('0208'),category:'Office',title:'Quiet Focus',description:'A calmer way to work.',ratio:'landscape'},
   {id:'m4',type:'video',src:video('0243'),poster:image('0166'),category:'Custom',title:'Made to Measure',description:'From material to finished space.',ratio:'portrait'},
   {id:'m5',type:'image',src:image('0182'),category:'Office',title:'Working Landscape',description:'An adaptable workspace environment.',ratio:'portrait'},
-  {id:'m6',type:'image',src:image('0106'),category:'Custom',title:'Material Study',description:'Form, grain and considered detail.',ratio:'square'},
+  {id:'m6',type:'image',src:image('0166'),category:'Custom',title:'Material Study',description:'Form, grain and considered detail.',ratio:'square'},
   {id:'m7',type:'image',src:image('0178'),category:'Interiors',title:'Learning Together',description:'Durable pieces for shared discovery.',ratio:'landscape'},
   {id:'m8',type:'image',src:image('0233'),category:'Corporate',title:'First Impression',description:'A custom reception statement.',featured:true,ratio:'portrait'},
-  {id:'m9',type:'video',src:video('0262'),poster:image('0106'),category:'Custom',title:'In the Detail',description:'Craft seen up close.',ratio:'landscape'},
+  {id:'m9',type:'video',src:video('0262'),poster:image('0166'),category:'Custom',title:'In the Detail',description:'Craft seen up close.',ratio:'landscape'},
   {id:'m10',type:'image',src:image('0165'),category:'Home',title:'Dining Ritual',description:'A generous table for gathering.',ratio:'portrait'},
   {id:'m11',type:'image',src:image('0234'),category:'Interiors',title:'Welcome In',description:'Furniture and atmosphere in balance.',featured:true,ratio:'landscape'},
   {id:'m12',type:'image',src:image('0195'),category:'Home',title:'Soft Geometry',description:'Comfort shaped with intention.',ratio:'square'},
@@ -38,7 +38,7 @@ export const projectMedia:MediaItem[]=[
   {id:'m27',type:'image',src:image('0055'),category:'Metal Works',title:'Dark Threshold',description:'A clean, robust gate tailored to its setting.',ratio:'landscape'},
   {id:'m28',type:'image',src:image('0144'),category:'Custom',title:'Wall in Relief',description:'Storage and display given architectural depth.',ratio:'landscape'},
   {id:'m29',type:'image',src:image('0120'),category:'Home',title:'Private Storage',description:'Fitted joinery shaped around daily rituals.',ratio:'portrait'},
-  {id:'m30',type:'image',src:image('0104'),category:'Office',title:'Leadership Table',description:'A precise surface for focus and conversation.',ratio:'square'},
+  {id:'m30',type:'image',src:image('0013'),category:'Office',title:'Leadership Table',description:'A precise surface for focus and conversation.',ratio:'square'},
 ]
 
 export const projectCategories=['All','Home','Interiors','Corporate','Office','Custom','Metal Works'] as const

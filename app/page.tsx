@@ -7,14 +7,14 @@ import { InquiryForm } from '@/components/inquiry-form'
 
 const image=(n:string)=>`/images/IMG-20260813-WA${n}.jpg`
 const collections=[
-  {name:'Home',copy:'Furniture for living well.',image:'0162'},
+  {name:'Home',copy:'Furniture for living well.',image:'0165'},
   {name:'Office',copy:'A more composed work day.',image:'0134'},
   {name:'Interiors',copy:'Designed around the space.',image:'0146'},
   {name:'Metal Works',copy:'Architectural structure and detail.',image:'0059'},
 ]
 const aboutImages=[
-  ['0137','Warm timber furniture detail'],['0162','Finished dining furniture'],['0196','Custom bedroom storage'],['0146','Architectural media wall'],
-  ['0208','Contemporary office installation'],['0059','Wide custom metal entrance gate'],['0151','Bespoke boardroom furniture'],['0183','Custom collaborative table'],
+  ['0137','Warm timber furniture detail'],['0006','Timber media console in a finished living room'],['0196','Custom bedroom storage'],['0146','Architectural media wall'],
+  ['0208','Contemporary office installation'],['0059','Wide custom metal entrance gate'],['0151','Bespoke boardroom furniture'],['0183','Custom collaborative table'],['0165','Woodwey upholstered living room furniture'],
 ]
 
 export default function Home(){return <main className="page-enter"><Header/>

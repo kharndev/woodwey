@@ -1,0 +1,68 @@
+{
+  "Home": [
+    {"src":"/images/IMG-20260813-WA0165.jpg","itemId":"living-room-furniture","alt":"Woodwey upholstered living room seating"},
+    {"src":"/images/IMG-20260813-WA0120.jpg","itemId":"living-room-furniture","alt":"Finished Woodwey living room furniture and media wall"},
+    {"src":"/images/IMG-20260813-WA0116.jpg","itemId":"wardrobe-wall","alt":"Full height Woodwey wardrobe in a residential interior"},
+    {"src":"/images/IMG-20260813-WA0196.jpg","itemId":"nursery-storage","alt":"Woodwey nursery storage and cot"},
+    {"src":"/images/IMG-20260813-WA0146.jpg","itemId":"media-wall","alt":"Architectural Woodwey media wall"},
+    {"src":"/images/IMG-20260813-WA0098.jpg","itemId":"kitchen-system","alt":"Compact Woodwey fitted kitchen"},
+    {"src":"/images/IMG-20260813-WA0010.jpg","itemId":"linear-media-console","alt":"Woodwey timber television console"},
+    {"src":"/images/IMG-20260813-WA0166.jpg","itemId":"dining-collection","alt":"Made-to-measure Woodwey timber dining table"},
+    {"src":"/images/IMG-20260813-WA0006.jpg","itemId":"linear-media-console","alt":"Woodwey timber media console in a finished living room"}
+  ],
+  "Interiors": [
+    {"src":"/images/IMG-20260813-WA0144.jpg","itemId":"reception-interior","alt":"Finished Woodwey architectural reception interior"},
+    {"src":"/images/IMG-20260813-WA0146.jpg","itemId":"media-wall","alt":"Woodwey fitted media wall with textured finish"},
+    {"src":"/images/IMG-20260813-WA0155.jpg","itemId":"media-wall","alt":"Timber slat detail in a Woodwey interior"},
+    {"src":"/images/IMG-20260813-WA0137.jpg","itemId":"media-wall","alt":"Warm material and lighting details in a Woodwey interior"},
+    {"src":"/images/IMG-20260813-WA0116.jpg","itemId":"wardrobe-wall","alt":"Woodwey floor to ceiling wardrobe interior"},
+    {"src":"/images/IMG-20260813-WA0129.jpg","itemId":"custom-storage","alt":"Woodwey storage fitted beneath a staircase"},
+    {"src":"/images/IMG-20260813-WA0142.jpg","itemId":"custom-storage","alt":"Architectural timber storage beneath stairs"},
+    {"src":"/images/IMG-20260813-WA0160.jpg","itemId":"media-wall","alt":"Woodwey fitted wall system and vertical timber detail"},
+    {"src":"/images/IMG-20260813-WA0098.jpg","itemId":"kitchen-system","alt":"Woodwey fitted kitchen cabinetry"}
+  ],
+  "Corporate": [
+    {"src":"/images/IMG-20260813-WA0013.jpg","itemId":"boardroom-table","alt":"Woodwey boardroom with long meeting table"},
+    {"src":"/images/IMG-20260813-WA0012.jpg","itemId":"boardroom-table","alt":"Finished Woodwey boardroom furniture"},
+    {"src":"/images/IMG-20260813-WA0107.jpg","itemId":"executive-office","alt":"Completed Woodwey corporate meeting space"},
+    {"src":"/images/IMG-20260813-WA0151.jpg","itemId":"executive-office","alt":"Woodwey executive office furniture"},
+    {"src":"/images/IMG-20260813-WA0134.jpg","itemId":"executive-office","alt":"Executive desk and cabinetry by Woodwey"},
+    {"src":"/images/IMG-20260813-WA0183.jpg","itemId":"conference-table","alt":"Woodwey long conference table"},
+    {"src":"/images/IMG-20260813-WA0105.jpg","itemId":"reception-desk","alt":"Woodwey reception desk with integrated lighting"},
+    {"src":"/images/IMG-20260813-WA0002.jpg","itemId":"reception-desk","alt":"Woodwey welcome desk at a corporate entrance"},
+    {"src":"/images/IMG-20260813-WA0144.jpg","itemId":"reception-interior","alt":"Architectural Woodwey corporate reception"}
+  ],
+  "Office": [
+    {"src":"/images/IMG-20260813-WA0134.jpg","itemId":"executive-office","alt":"Woodwey executive office installation"},
+    {"src":"/images/IMG-20260813-WA0114.jpg","itemId":"executive-work-desk","alt":"Woodwey executive work desk"},
+    {"src":"/images/IMG-20260813-WA0125.jpg","itemId":"executive-work-desk","alt":"Illuminated Woodwey office desk"},
+    {"src":"/images/IMG-20260813-WA0090.jpg","itemId":"focus-workstations","alt":"Woodwey open office workstations"},
+    {"src":"/images/IMG-20260813-WA0094.jpg","itemId":"focus-workstations","alt":"Completed Woodwey workspace installation"},
+    {"src":"/images/IMG-20260813-WA0178.jpg","itemId":"focus-workstations","alt":"Woodwey clustered desks for a workspace"},
+    {"src":"/images/IMG-20260813-WA0182.jpg","itemId":"focus-workstations","alt":"Office workstations and seating by Woodwey"},
+    {"src":"/images/IMG-20260813-WA0102.jpg","itemId":"executive-office","alt":"Woodwey timber executive office"},
+    {"src":"/images/IMG-20260813-WA0177.jpg","itemId":"focus-workstations","alt":"Woodwey modular office desks"}
+  ],
+  "Custom": [
+    {"src":"/images/IMG-20260813-WA0138.jpg","itemId":"media-wall","alt":"Finished Woodwey custom feature wall and lounge furniture"},
+    {"src":"/images/IMG-20260813-WA0146.jpg","itemId":"media-wall","alt":"Custom Woodwey architectural media wall"},
+    {"src":"/images/IMG-20260813-WA0155.jpg","itemId":"media-wall","alt":"Custom vertical timber detailing by Woodwey"},
+    {"src":"/images/IMG-20260813-WA0116.jpg","itemId":"wardrobe-wall","alt":"Made to measure Woodwey wardrobe"},
+    {"src":"/images/IMG-20260813-WA0197.jpg","itemId":"nursery-storage","alt":"Custom fitted nursery cabinetry by Woodwey"},
+    {"src":"/images/IMG-20260813-WA0142.jpg","itemId":"custom-storage","alt":"Bespoke Woodwey under-stair storage"},
+    {"src":"/images/IMG-20260813-WA0166.jpg","itemId":"conference-table","alt":"Woodwey made to measure timber meeting table"},
+    {"src":"/images/IMG-20260813-WA0010.jpg","itemId":"linear-media-console","alt":"Bespoke Woodwey media console"},
+    {"src":"/images/IMG-20260813-WA0003.jpg","itemId":"custom-storage","alt":"Custom Woodwey cabinet shelving and drawers"}
+  ],
+  "Metal Works": [
+    {"src":"/images/IMG-20260813-WA0059.jpg","itemId":"architectural-metalwork","alt":"Wide architectural entrance gate by Woodwey"},
+    {"src":"/images/IMG-20260813-WA0055.jpg","itemId":"architectural-metalwork","alt":"Woodwey louvred metal entrance gate"},
+    {"src":"/images/IMG-20260813-WA0056.jpg","itemId":"architectural-metalwork","alt":"Louvred metal fabrication detail by Woodwey"},
+    {"src":"/images/IMG-20260813-WA0064.jpg","itemId":"architectural-metalwork","alt":"Woodwey architectural louvre gate"},
+    {"src":"/images/IMG-20260813-WA0065.jpg","itemId":"architectural-metalwork","alt":"Woodwey sliding metal gate"},
+    {"src":"/images/IMG-20260813-WA0072.jpg","itemId":"architectural-metalwork","alt":"Finished ribbed entrance gate by Woodwey"},
+    {"src":"/images/IMG-20260813-WA0076.jpg","itemId":"architectural-metalwork","alt":"Woodwey perforated architectural metal screen"},
+    {"src":"/images/IMG-20260813-WA0080.jpg","itemId":"architectural-metalwork","alt":"Metal gate pattern and louvres by Woodwey"},
+    {"src":"/images/IMG-20260813-WA0081.jpg","itemId":"architectural-metalwork","alt":"Woodwey vertical bar entrance gate"}
+  ]
+}
