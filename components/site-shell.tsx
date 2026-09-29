@@ -8,7 +8,7 @@ import { ArrowUpRight, Menu, MessageCircle, X } from 'lucide-react'
 import { CatalogRequestButton } from '@/components/catalog-request'
 import { SelectionTrigger } from '@/components/selection-panel'
 
-const links=[['Home','/'],['Catalog','/catalog'],['Projects','/projects'],['Explore Our Work','/projects'],['Start a Project','/#contact']]
+const links=[['Home','/'],['Catalog','/catalog'],['Projects','/projects'],['Start a Project','/#contact']]
 const socials=[['Instagram',process.env.NEXT_PUBLIC_INSTAGRAM_URL],['Facebook',process.env.NEXT_PUBLIC_FACEBOOK_URL],['LinkedIn',process.env.NEXT_PUBLIC_LINKEDIN_URL]].filter((x):x is [string,string]=>Boolean(x[1]))
 
 export function Header(){
