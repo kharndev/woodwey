@@ -49,7 +49,6 @@ function image(src, x, y, width, height, protectedImage = true) {
   doc.save().rect(x, y, width, height).clip().image(file, x, y, { cover: [width, height], align: 'center', valign: 'center' }).restore()
   if (!protectedImage) return
   const label = 'WOODWEY'
-  const phone = '0803 297 3402'
   doc.font('Woodwey Sans Bold').fontSize(100)
   const baseWidth = doc.widthOfString(label, { characterSpacing: 3 })
   const fontSize = Math.min(width * .77 * 100 / baseWidth, height * .19, 66)
@@ -57,13 +56,9 @@ function image(src, x, y, width, height, protectedImage = true) {
   const wordWidth = doc.widthOfString(label, { characterSpacing: fontSize * .03 })
   const wordX = x + (width - wordWidth) / 2
   const wordY = y + height * .48 - fontSize * .55
-  const phoneSize = Math.min(10, Math.max(7, fontSize * .23))
-  const phoneY = wordY + fontSize * 1.06 + 2
   doc.save().rect(x, y, width, height).clip()
-  doc.fillOpacity(.30).fillColor('#ffffff').font('Woodwey Sans Bold').fontSize(fontSize)
+  doc.fillOpacity(.18).fillColor('#ffffff').font('Woodwey Sans Bold').fontSize(fontSize)
     .text(label, wordX, wordY, { characterSpacing: fontSize * .03, lineBreak: false })
-  doc.fillOpacity(.62).fillColor('#ffffff').font('Woodwey Sans Bold').fontSize(phoneSize)
-    .text(phone, x, phoneY, { width, align: 'center', characterSpacing: phoneSize * .06, lineBreak: false })
   doc.restore()
 }
 function footer(number, tint = colors.ink) {
